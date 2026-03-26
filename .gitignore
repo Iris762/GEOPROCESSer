@@ -1,0 +1,22 @@
+# 排除大型依赖和编译产物
+eigen-3.4.0/
+x64/
+.vs/
+Debug/
+Release/
+
+# 排除二进制文件
+*.dll
+*.exe
+*.pdb
+*.exp
+*.lib
+
+# 排除临时文件和 Qt 生成项
+GeneratedFiles/
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+*.log
+*.tlog
+*.lastbuildstate

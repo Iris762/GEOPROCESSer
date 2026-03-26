@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>819</width>
+    <height>522</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>29</y>
+      <width>681</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>819</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <widget class="QMenu" name="menuImportImage">
+     <property name="title">
+      <string>导入影像</string>
+     </property>
+     <addaction name="actionImportPanchromatic"/>
+     <addaction name="actionImportMultispectral"/>
+     <addaction name="actionImportBatch"/>
+    </widget>
+    <widget class="QMenu" name="menuExportResult">
+     <property name="title">
+      <string>导出结果</string>
+     </property>
+     <addaction name="actionExportRegisteredImage"/>
+     <addaction name="actionExportFusedImage"/>
+     <addaction name="actionExportDetectionResult"/>
+     <addaction name="separator"/>
+     <addaction name="actionExportWithSettings"/>
+     <addaction name="actionBatchExportSettings"/>
+    </widget>
+    <widget class="QMenu" name="menuRecentProjects">
+     <property name="title">
+      <string>最近工程</string>
+     </property>
+     <addaction name="actionRecent1"/>
+     <addaction name="actionRecent2"/>
+    </widget>
+    <addaction name="actionNewProject"/>
+    <addaction name="actionOpenProject"/>
+    <addaction name="actionSaveProject"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="menuImportImage"/>
+    <addaction name="menuExportResult"/>
+    <addaction name="menuRecentProjects"/>
+   </widget>
+   <widget class="QMenu" name="menuGeometricRegistration">
+    <property name="title">
+     <string>几何配准</string>
+    </property>
+    <addaction name="actionManualRegistration"/>
+    <addaction name="separator"/>
+    <addaction name="actionControlPointManager"/>
+    <addaction name="actionRegistrationSettings"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>影像融合</string>
+    </property>
+    <addaction name="actionImageFusionSettings"/>
+    <addaction name="actionPCAFusion"/>
+    <addaction name="actionIHSFusion"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuGeometricRegistration"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <widget class="QListWidget" name="imageListWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>121</width>
+       <height>441</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <action name="actionImportPanchromatic">
+   <property name="text">
+    <string>导入全色影像</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionImportMultispectral">
+   <property name="text">
+    <string>导入多光谱影像</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionImportBatch">
+   <property name="text">
+    <string>批量导入</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionNewProject">
+   <property name="text">
+    <string>新建工程(&amp;N)</string>
+   </property>
+   <property name="toolTip">
+    <string>创建一个新的遥感工程</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionOpenProject">
+   <property name="text">
+    <string>打开工程(&amp;O)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionSaveProject">
+   <property name="text">
+    <string>保存工程(&amp;S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>另存为(&amp;A)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionExportRegisteredImage">
+   <property name="text">
+    <string>导出配准影像(&amp;R)</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionExportFusedImage">
+   <property name="text">
+    <string>导出融合影像(&amp;F)</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionExportDetectionResult">
+   <property name="text">
+    <string>导出检测结果(&amp;D)</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionRecent1">
+   <property name="text">
+    <string>1. project1.rsp</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionRecent2">
+   <property name="text">
+    <string>2. project2.rsp</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionExportWithSettings">
+   <property name="text">
+    <string>自定义导出设置(&amp;S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionBatchExportSettings">
+   <property name="text">
+    <string>批量导出设置(&amp;B)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+E</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionManualRegistration">
+   <property name="text">
+    <string>手动配准(&amp;M)</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionControlPointManager">
+   <property name="text">
+    <string>控制点管理(&amp;C)</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionRegistrationSettings">
+   <property name="text">
+    <string>配准设置(&amp;S)</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionImageFusionSettings">
+   <property name="text">
+    <string>影像融合设置</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionPCAFusion">
+   <property name="text">
+    <string>PCA融合</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionIHSFusion">
+   <property name="text">
+    <string>IHS融合</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
